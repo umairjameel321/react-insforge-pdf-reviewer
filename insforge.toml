@@ -1,0 +1,32 @@
+[auth]
+allowed_redirect_urls = ["http://localhost:5173", "http://localhost:5173/auth"]
+require_email_verification = false
+verify_email_method = "code"
+reset_password_method = "code"
+disable_signup = false
+
+[auth.password]
+min_length = 10
+require_number = true
+require_lowercase = true
+require_uppercase = true
+require_special_char = false
+
+[auth.smtp]
+enabled = false
+host = ""
+port = 465
+username = ""
+sender_email = ""
+sender_name = ""
+min_interval_seconds = 60
+
+[storage]
+# Backstop for the 10 MiB client-side + CHECK-constraint PDF cap.
+max_file_size_mb = 10
+
+[realtime]
+retention_days = 0
+
+[schedules]
+retention_days = 7

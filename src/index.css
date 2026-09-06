@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-800 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04';
+  }
+
+  ::selection {
+    @apply bg-stone-800 text-stone-50;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm
+           font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-stone-900 text-white hover:bg-stone-700;
+  }
+
+  .btn-ghost {
+    @apply btn border border-stone-300 bg-white text-stone-700 hover:bg-stone-100;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900
+           placeholder:text-stone-400 focus:border-stone-500 focus:outline-none focus:ring-2
+           focus:ring-stone-200;
+  }
+
+  .card {
+    @apply rounded-xl border border-stone-200 bg-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium;
+  }
+}
+
+/* Preserve the newlines and bullet lists the models emit without a markdown renderer. */
+.prose-plain {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.65;
+}
